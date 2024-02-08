@@ -1,0 +1,2 @@
+<%= turbo_stream.replace @pokemon, partial: "pokemons/pokemon", locals: { pokemon: @pokemon } %>
+<%= turbo_stream.replace :sidebar, partial: "pokemons/sidebar", locals: { favorite_pokemons: current_user.favorite_pokemons } %>

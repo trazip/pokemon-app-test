@@ -1,0 +1,14 @@
+<div class="container py-4">
+  <h1 class="display-5 fw-bold text-body-emphasis">Pokemons</h1>
+
+  <div class="row">
+    <%= render "sidebar", favorite_pokemons: current_user.favorite_pokemons %>
+
+    <div class="col-9">
+      <div class="row row-cols-4">
+        <%= render @pokemons %>
+      </div>
+    </div>
+  </div>
+</div>
+

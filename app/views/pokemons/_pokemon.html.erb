@@ -1,0 +1,25 @@
+<%= turbo_frame_tag pokemon, class: "col g-2" do %>
+  <div class="card bg-white">
+    <div class="card-body">
+      <div class="d-flex justify-content-between">
+        <div>
+          <h5 class="card-title"><%= pokemon.name %></h5>
+          <h6 class="card-subtitle mb-2 text-body-secondary"><%= pokemon.location %></h6>
+        </div>
+
+        <div>
+          <% if current_user.favorite_pokemons.include?(pokemon) %>
+            <%= button_to pokemon_favorites_path(pokemon), method: :delete, class: "bg-transparent border-0"  do %>
+              <svg class="heart-icon filled" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            <% end %>
+          <% else %>
+            <%= button_to pokemon_favorites_path(pokemon), method: :post, class: "bg-transparent border-0" do %>
+              <svg class="heart-icon outlined" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+            <% end %>
+          <% end %>
+        </div>
+      </div>
+
+    </div>
+  </div>
+<% end %>

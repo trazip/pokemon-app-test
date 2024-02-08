@@ -7,3 +7,11 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+require "faker"
+
+User.create(email: "johndoe@example.com", password: "password")
+
+30.times do
+  Pokemon.create(name: Faker::Games::Pokemon.name, location: Faker::Games::Pokemon.location)
+end

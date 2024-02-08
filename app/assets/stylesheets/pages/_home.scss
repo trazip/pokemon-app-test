@@ -1,1 +1,15 @@
 // Specific CSS for your home-page
+.heart-icon {
+  stroke-width: 2;
+  stroke-linecap: "round";
+  stroke-linejoin: "round";
+}
+
+.outlined {
+  fill: none;
+}
+
+.filled {
+  fill: red;
+  stroke: red;
+}

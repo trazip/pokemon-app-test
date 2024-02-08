@@ -1,0 +1,11 @@
+<%= turbo_frame_tag :sidebar, class: "col-3" do %>
+  <div class="bg-white border mt-2 p-2">
+    <h4>My favorite pokemons:</h4>
+
+    <% favorite_pokemons.each do |pokemon| %>
+      <div>
+        <%= pokemon.name %>
+      </div>
+    <% end %>
+  </div>
+<% end %>
